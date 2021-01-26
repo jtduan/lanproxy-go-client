@@ -43,7 +43,7 @@ const (
 	URI_LENGTH_SIZE = 1
 
 	//心跳周期，服务器端空闲连接如果60秒没有数据上报就会关闭连接
-	HEARTBEAT_INTERVAL = 3
+	HEARTBEAT_INTERVAL = 1
 )
 
 type LPMessageHandler struct {

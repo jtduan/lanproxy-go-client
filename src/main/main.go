@@ -143,7 +143,7 @@ func main() {
 }
 
 func start(key string, ip string, port int, conf *tls.Config) {
-	connPool := &ConnHandlerPool{Size: 100, Pooler: &ProxyConnPooler{addr: ip + ":" + strconv.Itoa(port), conf: conf}}
+	connPool := &ConnHandlerPool{Size: 1000, Pooler: &ProxyConnPooler{addr: ip + ":" + strconv.Itoa(port), conf: conf}}
 	connPool.Init()
 	connHandler := &ConnHandler{}
 	for {

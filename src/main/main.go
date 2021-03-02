@@ -43,7 +43,7 @@ const (
 	URI_LENGTH_SIZE = 1
 
 	//心跳周期，服务器端空闲连接如果60秒没有数据上报就会关闭连接
-	HEARTBEAT_INTERVAL = 1
+	HEARTBEAT_INTERVAL = 3
 )
 
 type LPMessageHandler struct {
@@ -171,7 +171,7 @@ func connect(key string, ip string, port int, conf *tls.Config) net.Conn {
 		}
 		if err != nil {
 			log.Println("Error dialing", err.Error())
-			time.Sleep(time.Second * 3)
+			time.Sleep(time.Second)
 			continue
 		}
 
